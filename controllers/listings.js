@@ -24,6 +24,10 @@ module.exports.index = async (req, res) => {
   res.render("listings/index.ejs", { allListings, category, search });
 };
 
+module.exports.renderNewForm= (req, res) => {
+  res.render("listings/new.ejs");
+};
+
 module.exports.showListing= async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id)
